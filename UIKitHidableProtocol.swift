@@ -10,25 +10,25 @@ import Foundation
 import UIKit
 
 protocol UIKitHidable: class {
-	var hidden: Bool { get set }
+	var isHidden: Bool { get set }
 }
 
 extension UIKitHidable {
 	func hide() {
-		self.hidden = true
+		self.isHidden = true
 	}
 	func show() {
-		self.hidden = false
+		self.isHidden = false
 	}
 	
 	func hideAnimated(animationDuration duration: Double = 0.5) {
 		UIView.animate(withDuration: duration, animations: {
-			self.hidden = true
+			self.isHidden = true
 		}) 
 	}
 	func showAnimated(animationDuration duration: Double = 0.5) {
 		UIView.animate(withDuration: duration, animations: {
-			self.hidden = false
+			self.isHidden = false
 		}) 
 	}
 }
